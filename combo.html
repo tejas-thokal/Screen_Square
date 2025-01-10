@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottle</title>
+    <link rel="stylesheet" href="bottle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/Screen_Square/t-shirt.html"><i class="fa-solid fa-shirt"></i></a></li>
+                <li><a href="/Screen_Square/bottle.html"><i class="fa-solid fa-bottle-water"></i></a></li>
+                <li><a href="/Screen_Square/hat.html"><i class="fa-solid fa-hat-cowboy"></i></a></li>
+                <li><a href="/Screen_Square/mug.html"><i class="fas fa-mug-hot"></i></a></li>
+                <li><a href="/Screen_Square/pen.html"><i class="fa-solid fa-pen"></i></a></li>
+            </ul>
+        </aside>
+    
+        <!-- Main Content -->
+        <div class="main-content">
+        <header class="navbar">
+            <i class="fa-solid fa-bars bar"></i>
+            <div class="logo">
+            <img src="/Screen_Square/images/Screen Square NEW PNG.png" alt="Logo"  onclick="window.location.href='index.html';">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/Screen_Square/index.html">Home</a></li>
+                    <li><a href="/Screen_Square/product.html">Products</a></li>
+                    <li><a href="/Screen_Square/about_us.html">About us</a></li>
+                    <li><a href="/Screen_Square/contact_us.html">Contact us</a></li>
+                </ul>
+            </nav>
+            <div class="search_like">
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <div class="search_icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <div class="like">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="tshirt-container">
+            <!-- Filters -->
+            <div class="filters">
+                <div class="filter-buttons">
+                    <button id="round-neck-btn" class="active">
+                    <img src="/Screen_Square/images/combo2.png" alt="Round Neck Shirt">
+                    <p>bottle</p>
+                    </button>
+                </div>
+            </div>
+        
+            <!-- Product Cards -->
+            <div class="products">
+            <!-- Card 1 -->
+            <div id="mug" class="product-card">
+                <img id="dynamic-image" src="/Screen_Square/images/combo2.png" alt="Black T-Shirt">
+                <h3>Customize bottle</h3>
+                <p>for gift</p>
+                <p class="stock-status">In stock</p>
+                <div class="buttons">
+                <button class="enquire-now">Enquire Now</button>
+                <button class="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    Enquire on WhatsApp
+                </button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="/Screen_Square/images/logo_black.png" alt="">
+        </div>
+        <div class="menu">
+            <a href="/Screen_Square/index.html">Home</a>
+            <a href="/Screen_Square/product.html">Product</a>
+            <a href="/Screen_Square/about_us.html">About us</a>
+            <a href="/Screen_Square/contact_us.html">Contact us</a>
+        </div>
+        <div class="social-icons">
+            <div class="facebook">
+              <a href=" https://www.facebook.com/Screen-Square-102779894899655" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+            <div class="twitter">
+              <a href=" https://g.co/kgs/55XUY7" title="Google" target="_blank"><i class="fa-brands fa-google"></i></a>
+            </div>
+            <div class="instagram">
+              <a href="https://www.instagram.com/screensquarebybhumika/" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let bar = document.querySelector(".bar");
+        let sidebar = document.querySelector(".sidebar");
+        let mode = "show"; // Initialize the mode
+        const dynamicImage = document.getElementById("dynamic-image");
+        let currentIndex = 0;
+        const show_sidebar = () => {
+        bar.addEventListener("click", () => {
+        if (mode === "show") { // Check if mode is "show"
+            sidebar.style.display = "none"; // Hide the sidebar
+            mode = "hide"; // Update mode to "hide"
+        } else {
+            sidebar.style.display = "block"; // Show the sidebar
+            mode = "show"; // Update mode to "show"
+        }
+    });
+};
+
+show_sidebar();
+
+const images = [
+  "/Screen_Square/images/combo.jpg",
+  "/Screen_Square/images/comboset1.jpg",
+  "/Screen_Square/images/comboset2.jpg",
+  "/Screen_Square/images/combo2.png"
+];
+
+
+function changeImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  dynamicImage.src = images[currentIndex];
+}
+setInterval(changeImage, 1500);
+    </script>
+</body>
+</html>
